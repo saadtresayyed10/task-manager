@@ -1,5 +1,5 @@
-import connectToDB from "@/libs/db";
-import Task from "@/model/task";
+import connectToDB from "../../../../libs/db";
+import Task from "../../../../model/task";
 import { NextResponse } from "next/server";
 
 export async function PUT(request, { params }) {

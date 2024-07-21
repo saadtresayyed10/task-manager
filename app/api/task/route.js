@@ -1,12 +1,20 @@
-import connectToDB from "@/libs/db";
-import Task from "@/model/task";
+import connectToDB from "../../../libs/db";
+import Task from "../../../model/task";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-  const { title, description, dueDate, priority } = await request.json();
-  await connectToDB();
-  await Task.create({ title, description, dueDate, priority });
-  return NextResponse.json({ message: "Task created" }, { status: 201 });
+  try {
+    const { title, description, dueDate, priority } = await request.json();
+    await connectToDB();
+    await Task.create({ title, description, dueDate, priority });
+    return NextResponse.json({ message: "Task created" }, { status: 201 });
+  } catch (error) {
+    console.error("Error creating task:", error);
+    return NextResponse.json(
+      { message: "Failed to create task", error: error.message },
+      { status: 500 }
+    );
+  }
 }
 
 export async function GET() {

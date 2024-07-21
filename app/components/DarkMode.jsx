@@ -4,13 +4,13 @@ import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../../components/ui/dropdown-menu";
 
 const DarkMode = () => {
   const { setTheme } = useTheme();
@@ -19,7 +19,7 @@ const DarkMode = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className="shadow-[0.25rem_0.25rem_0px_0px_rgba(0,0,0,1)] border-2 border-black rounded-md"
+          className="shadow-[0.25rem_0.25rem_0px_0px_rgba(0,0,0,1)] border-2 bg-white text-black border-black rounded-md"
           variant="outline"
           size="icon"
         >
