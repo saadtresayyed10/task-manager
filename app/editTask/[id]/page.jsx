@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
-const EditTaskPage = ({ _id }) => {
+export default function EditTaskPage({ _id }) {
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -102,6 +102,4 @@ const EditTaskPage = ({ _id }) => {
       </form>
     </div>
   );
-};
-
-export default EditTaskPage;
+}
